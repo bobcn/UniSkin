@@ -19,6 +19,7 @@ namespace UniSkin
             var visualElement = editorWindow.rootVisualElement;
 
             if (visualElement.parent is null) return false;
+            if (visualElement.parent[0] is not IMGUIContainer) return false;
 
             var guiContainer = visualElement.parent[0] as IMGUIContainer;
             var originalGUIHandler = guiContainer.onGUIHandler;
